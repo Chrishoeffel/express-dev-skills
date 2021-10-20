@@ -1,12 +1,11 @@
 const skills = [
-    {skill: 'HTML/CSS', Completed: true},
-    {skill: 'Analytical', Completed: false},
-    {skill: 'Responsive design', Completed: false},
-    {skill: "JavaScript", Completed: true},
-    {skill: "Interpersonal", Completed: false},
-    {skill: "Testing and debugging", Completed: false},
-    {skill: "Back-end basics", Completed: true},
-    {skill: "Search engine optimization", Completed: false},
+    {skill: 'HTML/CSS', skillLevel: "Intermediate"},
+    {skill: 'Analytical', skillLevel: "Beginner"},
+    {skill: 'Responsive designer', skillLevel: "Beginner"},
+    {skill: "JavaScript", skillLevel: "Intermediate"},
+    {skill: "Interpersonal", skillLevel: "Expert"},
+    {skill: "Testing and debugging", skillLevel: "Beginner"},
+    {skill: "Search engine optimization", skillLevel: "Beginner"},
   ];
   
   //get all skills
