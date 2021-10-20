@@ -30,6 +30,6 @@ const devSkills = [
     getAll,
     getOne,
     create,
-    deleteSkill
+    deleteSkill,
   
   };
