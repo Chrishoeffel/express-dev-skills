@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Express To-Do</title>
+  </head>
+  <body>
+    <h1>Here's is Robert's Skills</h1>
+    <ul>
+        <!-- We're using a forEach for sure. -->
+      <% skills.forEach(function(element, idx) { %>
+      <li>
+        <a href='/skills/<%= idx %>'><%= element.skill %></a>
+        <ul>
+            <li>
+                Skill Level: <%= element.skillLevel %>
+            </li>
+            <li>
+              <form action="/skills?_method=DELETE" method="POST">
+                <input type="submit" value="Delete Skill">
+              </form>
+            </li>
+        </ul>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html> 

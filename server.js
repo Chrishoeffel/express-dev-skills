@@ -1,9 +1,12 @@
 /*======== External Modules =======*/
 const express = require("express"); //require function that exists inside of node
-
+const morgan = require('morgan');
+const methodOverride = require("method-override");
 /*======== Internal Modules =======*/
 // All code that is out code (required internal modules)
-
+const indexMainPage = require("./routes/index");
+const skillsList = require("./routes/skills");
+const addSkill = require("./routes/add");
 /*======== Instanced Module =======*/
 //Create the Express App
 const app = express();
@@ -13,13 +16,17 @@ const app = express();
 const PORT = 4000;
 /*======== App Configurations =======*/
 app.set('view engine', 'ejs');
+app.use(morgan("tiny"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static("public"));
+app.use(methodOverride('_method'));
+
 /*======== Routes =======*/
-app.get('/', function(req, res) {
-    res.send('<h1>Hello Express</h1>');
-  });
-app.get('/home', function(req, res) {
-    res.render('home');
-});
+app.get('/', indexMainPage);
+
+app.use("/skills", skillsList);
+app.use("/add", addSkill);
 /*======== Server Bind =======*/
 app.listen(PORT, function () {
     console.log(`Active on port: ${PORT}` )
