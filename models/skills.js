@@ -1,4 +1,4 @@
-const devSkills = [
+const skills = [
     {skill: 'HTML/CSS', Completed: true},
     {skill: 'Analytical', Completed: false},
     {skill: 'Responsive design', Completed: false},
